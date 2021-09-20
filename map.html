@@ -49,45 +49,63 @@ function marker(positions) {
 
   for (var i = 0; i < positions.length; i ++) {
 
-      // 마커 이미지의 이미지 크기 입니다
-      var imageSize = new kakao.maps.Size(24, 35);
+    var marker = new kakao.maps.Marker({
+      map: map, // 마커를 표시할 지도
+      position: positions[i].latlng // 마커의 위치
+    });
 
-      // 마커 이미지를 생성합니다
-      var markerImage = new kakao.maps.MarkerImage(imageSrc, imageSize);
+    // 마커에 표시할 인포윈도우를 생성합니다
+    var infowindow = new kakao.maps.InfoWindow({
+        content: positions[i].content // 인포윈도우에 표시할 내용
+    });
 
-      // 마커를 생성합니다
-      var marker = new kakao.maps.Marker({
-          map: map, // 마커를 표시할 지도
-          position: positions[i].latlng, // 마커를 표시할 위치
-          title : positions[i].title, // 마커의 타이틀, 마커에 마우스를 올리면 타이틀이 표시됩니다
-          image : markerImage // 마커 이미지
-      });
+    // 마커에 mouseover 이벤트와 mouseout 이벤트를 등록합니다
+    // 이벤트 리스너로는 클로저를 만들어 등록합니다
+    // for문에서 클로저를 만들어 주지 않으면 마지막 마커에만 이벤트가 등록됩니다
+    kakao.maps.event.addListener(marker, 'mouseover', makeOverListener(map, marker, infowindow));
+    kakao.maps.event.addListener(marker, 'mouseout', makeOutListener(infowindow));
   }
 }
+
+// 인포윈도우를 표시하는 클로저를 만드는 함수입니다
+function makeOverListener(map, marker, infowindow) {
+    return function() {
+        infowindow.open(map, marker);
+    };
+}
+
+// 인포윈도우를 닫는 클로저를 만드는 함수입니다
+function makeOutListener(infowindow) {
+    return function() {
+        infowindow.close();
+    };
+}
+
+
 
 function marker_info(txt) {
   switch (txt){
     case 'snack':
       var info = [
         {
-          title: '마장동곱떡',
-          latlng: new kakao.maps.LatLng(37.493315,	127.041526)
+          content: '<div>마장동곱떡</div>',
+          latlng: new kakao.maps.LatLng(37.493315,127.041526)
         },
         {
-          title: '유채라멘',
-          latlng: new kakao.maps.LatLng(37.499386,	127.058096)
+          content: '<div>유채라멘</div>',
+          latlng: new kakao.maps.LatLng(37.499386,127.058096)
         },
         {
-          title: '지니김밥',
-          latlng: new kakao.maps.LatLng(37.498738,	127.056951)
+          content: '<div>지니김밥</div>',
+          latlng: new kakao.maps.LatLng(37.498738,127.056951)
         },
         {
-          title: '옆집떡볶이',
-          latlng: new kakao.maps.LatLng(37.502517,	127.058543)
+          content: '<div>옆집떡볶이</div>',
+          latlng: new kakao.maps.LatLng(37.502517,127.058543)
         },
         {
-          title: '봉구스밥버거',
-          latlng: new kakao.maps.LatLng(37.502486,	127.050254)
+          content: '<div>봉구스밥버거</div>',
+          latlng: new kakao.maps.LatLng(37.502486,127.050254)
         }
       ];
       marker(info);
@@ -95,23 +113,23 @@ function marker_info(txt) {
       case 'japanese':
         var info = [
           {
-            title: '이승재참치',
+            content: '<div>이승재참치</div>',
             latlng: new kakao.maps.LatLng(37.502564,	127.052096)
           },
           {
-            title: '코미도리',
+            content: '<div>코미도리</div>',
             latlng: new kakao.maps.LatLng(37.500539,	127.042260)
           },
           {
-            title: '묵호항',
+            content: '<div>묵호항</div>',
             latlng: new kakao.maps.LatLng(37.496593,	127.044594)
           },
           {
-            title: '명동관전복세상',
+            content: '<div>명동관전복세상</div>',
             latlng: new kakao.maps.LatLng(37.490694,	127.056125)
           },
           {
-            title: '강정희간장새우',
+            content: '<div>강정희간장새우</div>',
             latlng: new kakao.maps.LatLng(37.502573,	127.052107)
           }
         ];
@@ -120,23 +138,23 @@ function marker_info(txt) {
         case 'beverage':
           var info = [
             {
-              title: '마카몽',
+              content: '<div>마카몽</div>',
               latlng: new kakao.maps.LatLng(37.501576,	127.051317)
             },
             {
-              title: '헤일리스커피',
+              content: '<div>헤일리스커피</div>',
               latlng: new kakao.maps.LatLng(37.503489,	127.056133)
             },
             {
-              title: '그렌그로운',
+              content: '<div>그렌그로운</div>',
               latlng: new kakao.maps.LatLng(37.498906,	127.056666)
             },
             {
-              title: '커피데이',
+              content: '<div>커피데이</div>',
               latlng: new kakao.maps.LatLng(37.502515,	127.053816)
             },
             {
-              title: '이디야커피',
+              content: '<div>이디야커피</div>',
               latlng: new kakao.maps.LatLng(37.503518,	127.050817)
             }
           ];
@@ -145,23 +163,23 @@ function marker_info(txt) {
           case 'korean':
             var info = [
               {
-                title: '명품유쾌',
+                content: '<div>명품유쾌</div>',
                 latlng: new kakao.maps.LatLng(37.499578,	127.051614	)
               },
               {
-                title: '스테이',
+                content: '<div>스테이</div>',
                 latlng: new kakao.maps.LatLng(37.503485,	127.052277)
               },
               {
-                title: '에스',
+                content: '<div>에스</div>',
                 latlng: new kakao.maps.LatLng(37.501844,	127.052162)
               },
               {
-                title: '라무진',
+                content: '<div>라무진</div>',
                 latlng: new kakao.maps.LatLng(37.501577,	127.052595)
               },
               {
-                title: '청담이상',
+                content: '<div>청담이상</div>',
                 latlng: new kakao.maps.LatLng(37.504101,	127.052653)
               }
             ];
@@ -170,23 +188,23 @@ function marker_info(txt) {
             case 'western_style':
               var info = [
                 {
-                  title: '쿠사파스타',
+                  content: '<div>쿠사파스타</div>',
                   latlng: new kakao.maps.LatLng(37.501596,	127.058397)
                 },
                 {
-                  title: '가츠오',
+                  content: '<div>가츠오</div>',
                   latlng: new kakao.maps.LatLng(37.498989,	127.053442)
                 },
                 {
-                  title: '909버거앤파스타',
+                  content: '<div>909버거앤파스타</div>',
                   latlng: new kakao.maps.LatLng(37.500967,	127.052874)
                 },
                 {
-                  title: '빌리앤오티스',
+                  content: '<div>빌리앤오티스</div>',
                   latlng: new kakao.maps.LatLng(37.501474, 127.050934)
                 },
                 {
-                  title: '파파레스토랑',
+                  content: '<div>파파레스토랑</div>',
                   latlng: new kakao.maps.LatLng(37.504598,	127.057454)
                 }
               ];
