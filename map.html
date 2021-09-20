@@ -34,6 +34,20 @@ var mapContainer = document.getElementById('map'), // 지도를 표시할 div
 
 var map = new kakao.maps.Map(mapContainer, mapOption); // 지도를 생성합니다
 
+var imageSrc = 'https://www.google.com/imgres?imgurl=https%3A%2F%2Flookaside.fbsbx.com%2Flookaside%2Fcrawler%2Fmedia%2F%3Fmedia_id%3D109291630656930&imgrefurl=https%3A%2F%2Fwww.facebook.com%2Fdankooksoftware%2F&tbnid=yIAV1J2bA2FCrM&vet=12ahUKEwiG0vKn9I3zAhUWg5QKHb5cC7sQMygAegUIARCPAQ..i&docid=7DrgfGPSzg-gmM&w=1440&h=1440&q=%EB%8B%A8%EB%8C%80%EC%86%8C%ED%94%84%ED%8A%B8%EA%B3%A0%20%EB%A1%9C%EA%B3%A0&ved=2ahUKEwiG0vKn9I3zAhUWg5QKHb5cC7sQMygAegUIARCPAQ', // 마커이미지의 주소입니다    
+    imageSize = new kakao.maps.Size(64, 69), // 마커이미지의 크기입니다
+    imageOption = {offset: new kakao.maps.Point(27, 69)}; // 마커이미지의 옵션입니다. 마커의 좌표와 일치시킬 이미지 안에서의 좌표를 설정합니다.
+          
+// 마커의 이미지정보를 가지고 있는 마커이미지를 생성합니다
+var markerImage = new kakao.maps.MarkerImage(imageSrc, imageSize, imageOption),
+    markerPosition = new kakao.maps.LatLng(37.4956115411133, 127.05766654001489); // 마커가 표시될 위치입니다
+    
+// 마커를 생성합니다
+var marker = new kakao.maps.Marker({
+    position: markerPosition, 
+    image: markerImage // 마커이미지 설정 
+});
+
 </script>
 <script>
 
