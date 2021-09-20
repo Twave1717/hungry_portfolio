@@ -65,8 +65,8 @@ function marker(positions) {
   }
 }
 
-function marker_info(name) {
-  switch (name){
+function marker_info(txt) {
+  switch (txt){
     case 'snack':
       marker([
         {
@@ -209,7 +209,7 @@ function marker_info(name) {
 
 <div class="ranking">
   <span class="japanese">
-    <input type='button' onclick="marker_info('japanese')"> 일식 </input>
+    <input type='button' onclick="marker_info('japanese');"> 일식 </input>
     <ol>
       <li id="이승재참치">
         이승재참치
@@ -230,7 +230,7 @@ function marker_info(name) {
   </span>
 
   <span class="korean">
-    <input type='button' onclick="marker_info('korean')"> 한식 </input>
+    <input type='button' onclick="marker_info('korean');"> 한식 </input>
     <ol>
       <li id="명품유쾌">
         명품유쾌
@@ -251,7 +251,7 @@ function marker_info(name) {
   </span>
 
   <span class="western_style">
-    <input type='button' onclick="marker_info('western_style')"> 양식 </input>
+    <input type='button' onclick="marker_info('western_style');"> 양식 </input>
     <ol>
       <li id="쿠사파스타">
         쿠사파스타
@@ -272,7 +272,7 @@ function marker_info(name) {
   </span>
 
   <span class="beverage">
-    <input type='button' onclick="marker_info('beverage')"> 카페 </input>
+    <input type='button' onclick="marker_info('beverage');"> 카페 </input>
     <ol>
       <li id="마카몽">
         마카몽
@@ -293,7 +293,7 @@ function marker_info(name) {
   </span>
 
   <span class="snack">
-    <input type='button' onclick="marker_info('snack')"> 분식 </input>
+    <input type='button' onclick="marker_info('snack');"> 분식 </input>
     <ol>
       <li id="마장동곱떡">
         마장동곱떡
