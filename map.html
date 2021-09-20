@@ -1735,8 +1735,8 @@ function search_similar_company(input){
 
   // simi_company_idx의 회사들을 각각 돌며 이름과 location을 positions에 저장
   for (i=0; i < 3; i++){
-    simi_info = dict_company_to_index[simi_company[i]];
-    content_constructor = concat('<div>', simi_info[0], '</div>');
+    simi_info = dict_company_to_location[simi_company[i]];
+    content_constructor = ('<div>' + simi_info[0] + '</div>');
     info_temp = {
       content: content_constructor,
       latlng: new kakao.maps.LatLng(simi_info[1], simi_info[2])
