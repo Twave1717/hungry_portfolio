@@ -1713,9 +1713,16 @@ var dict_index_to_location = {
 function search_similar_company(){
   positions = [];
 
+  // input 값을 txt_box에서 가져옴
   var input = document.getElementById('txt_box').value;
+
+  // 업소명에 대한 idx값을 input_idx에 저장
   var input_idx = dict_company_to_index[input];
+
+  // input_idx에 대한 비슷한 업소 세개를 simi_company_idx에 저장
   var simi_company_idx = simi_company[input_idx];
+
+  // simi_company_idx의 회사들을 각각 돌며 이름과 location을 positions에 저장
   for (i=0; i < 3; i++){
     simi_info = dict_company_to_index[simi_company[i]];
     content_constructor = '<div>' + simi_info[0] + '</div>';
@@ -1724,7 +1731,7 @@ function search_similar_company(){
       latlng: new kakao.maps.LatLng(simi_info[1], simi_info[2])
     };
     positions.append(info_temp);
-}
+  };
 
 
   marker(positions);
