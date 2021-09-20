@@ -3,48 +3,332 @@
 <head>
     <meta charset="utf-8">
     <title>여러개 마커 표시하기</title>
-    
+
 </head>
+<style>
+.ranking{
+  display: flex;
+  flex-direction: flex-start;
+  align-items: stretch;
+}
+.ranking > span{
+  color: black;
+  width 100px;
+  margin: 10px;
+  text-align: center;
+  line-height: 75px;
+  font-size: 13px;
+}
+.search_simi {
+	display: grid;
+	/* display: inline-grid; */
+  grid-template-columns: 10fr 1fr 2fr 10fr 1fr 2fr;
+}
+</style>
 <body>
 <div id="map" style="width:100%;height:350px;"></div>
 
 <script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=7aa5121c6127b7a1a0f9158c5ee9183e"></script>
 <script>
-var mapContainer = document.getElementById('map'), // 지도를 표시할 div  
-    mapOption = { 
-        center: new kakao.maps.LatLng(37.503556, 127.051054), // 지도의 중심좌표
-        level: 3 // 지도의 확대 레벨
+
+var mapContainer = document.getElementById('map'), // 지도를 표시할 div
+    mapOption = {
+        center: new kakao.maps.LatLng(37.4956115411133, 127.05766654001489), // 지도의 중심좌표
+        level: 4 // 지도의 확대 레벨
     };
 
 var map = new kakao.maps.Map(mapContainer, mapOption); // 지도를 생성합니다
- 
-// 마커를 표시할 위치와 title 객체 배열입니다 
-var positions = [
-    {
-        title: '바른치킨',
-        latlng: new kakao.maps.LatLng(37.503556, 127.051054)
-    }
-];
 
-// 마커 이미지의 이미지 주소입니다
-var imageSrc = "https://t1.daumcdn.net/localimg/localimages/07/mapapidoc/markerStar.png"; 
-    
-for (var i = 0; i < positions.length; i ++) {
-    
-    // 마커 이미지의 이미지 크기 입니다
-    var imageSize = new kakao.maps.Size(24, 35); 
-    
-    // 마커 이미지를 생성합니다    
-    var markerImage = new kakao.maps.MarkerImage(imageSrc, imageSize); 
-    
-    // 마커를 생성합니다
-    var marker = new kakao.maps.Marker({
-        map: map, // 마커를 표시할 지도
-        position: positions[i].latlng, // 마커를 표시할 위치
-        title : positions[i].title, // 마커의 타이틀, 마커에 마우스를 올리면 타이틀이 표시됩니다
-        image : markerImage // 마커 이미지 
-    });
-}
 </script>
+
+
+
+
+
+
+
+<div class="txt_container">
+  <span>음식점 이름을 입력해주세요 (유사한 음식점을 찾아드립니다) </span>
+</div class="txt_container">
+
+<br>
+
+<div class="search_simi">
+  <input type="text" />
+  <span></span>
+  <input type="button" value="완료" />
+</div>
+
+<div class="ranking">
+  <span class="japanese">
+    <input type='button' onclick="marker_info('japanese')"> 일식 </input>
+    <ol>
+      <li id="이승재참치">
+        이승재참치
+      </li>
+      <li id="코미도리">
+        코미도리
+      </li>
+      <li id="묵호항">
+        묵호항
+      </li>
+      <li id="명동관전복세상">
+        명동관전복세상
+      </li>
+      <li id="강정희간장새우">
+        강정희간장새우
+      </li>
+    </ol>
+  </span>
+
+  <span class="korean">
+    <input type='button' onclick="marker_info('korean')"> 한식 </input>
+    <ol>
+      <li id="명품유쾌">
+        명품유쾌
+      </li>
+      <li id="스테이">
+        스테이
+      </li>
+      <li id="에스">
+        에스
+      </li>
+      <li id="라무진">
+        라무진
+      </li>
+      <li id="청담이상">
+        청담이상
+      </li>
+    </ol>
+  </span>
+
+  <span class="western_style">
+    <input type='button' onclick="marker_info('western_style')"> 양식 </input>
+    <ol>
+      <li id="쿠사파스타">
+        쿠사파스타
+      </li>
+      <li id="가츠오">
+        가츠오
+      </li>
+      <li id="909버거앤파스타">
+        909버거앤파스타
+      </li>
+      <li id="빌리앤오티스">
+        빌리앤오티스
+      </li>
+      <li id="파파레스토랑">
+        파파레스토랑
+      </li>
+    </ol>
+  </span>
+
+  <span class="beverage">
+    <input type='button' onclick="marker_info('beverage')"> 카페 </input>
+    <ol>
+      <li id="마카몽">
+        마카몽
+      </li>
+      <li id="헤일리스커피">
+        헤일리스커피
+      </li>
+      <li id="그렌그로운">
+        그렌그로운
+      </li>
+      <li id="커피데이">
+        커피데이
+      </li>
+      <li id="이디야커피">
+        이디야커피
+      </li>
+    </ol>
+  </span>
+
+  <span class="snack">
+    <input type='button' onclick="marker_info('snack')"> 분식 </input>
+    <ol>
+      <li id="마장동곱떡">
+        마장동곱떡
+      </li>
+      <li id="유채라멘">
+        유채라멘
+      </li>
+      <li id="지니김밥">
+        지니김밥
+      </li>
+      <li id="옆집떡볶이">
+        옆집떡볶이
+      </li>
+      <li id="봉구스밥버거">
+        봉구스밥버거
+      </li>
+  </ol>
+  </span>
+
+</div>
+
+
+
+
+
+<script>
+
+// positions 는 마커 위치 list
+
+function marker(positions) {
+
+  // 마커 이미지의 이미지 주소입니다
+  var imageSrc = "https://t1.daumcdn.net/localimg/localimages/07/mapapidoc/markerStar.png";
+
+  for (var i = 0; i < positions.length; i ++) {
+
+      // 마커 이미지의 이미지 크기 입니다
+      var imageSize = new kakao.maps.Size(24, 35);
+
+      // 마커 이미지를 생성합니다
+      var markerImage = new kakao.maps.MarkerImage(imageSrc, imageSize);
+
+      // 마커를 생성합니다
+      var marker = new kakao.maps.Marker({
+          map: map, // 마커를 표시할 지도
+          position: positions[i].latlng, // 마커를 표시할 위치
+          title : positions[i].title, // 마커의 타이틀, 마커에 마우스를 올리면 타이틀이 표시됩니다
+          image : markerImage // 마커 이미지
+      });
+  }
+}
+
+function marker_info(name) {
+  switch (name){
+    case 'snack':
+      marker([
+        {
+          title: '마장동곱떡'
+          latlng: new kakao.maps.LatLng(37.493315,	127.041526)
+        },
+        {
+          title: '유채라멘'
+          latlng: new kakao.maps.LatLng(37.499386,	127.058096)
+        },
+        {
+          title: '지니김밥'
+          latlng: new kakao.maps.LatLng(37.498738,	127.056951)
+        },
+        {
+          title: '옆집떡볶이'
+          latlng: new kakao.maps.LatLng(37.502517,	127.058543)
+        },
+        {
+          title: '봉구스밥버거'
+          latlng: new kakao.maps.LatLng(37.502486,	127.050254)
+        },
+      ])
+      break;
+      case 'japanese':
+        marker([
+          {
+            title: '이승재참치'
+            latlng: new kakao.maps.LatLng(37.502564,	127.052096)
+          },
+          {
+            title: '코미도리'
+            latlng: new kakao.maps.LatLng(37.500539,	127.042260)
+          },
+          {
+            title: '묵호항'
+            latlng: new kakao.maps.LatLng(37.496593,	127.044594)
+          },
+          {
+            title: '명동관전복세상'
+            latlng: new kakao.maps.LatLng(37.490694,	127.056125)
+          },
+          {
+            title: '강정희간장새우'
+            latlng: new kakao.maps.LatLng(37.502573,	127.052107)
+          },
+        ])
+        break;
+        case 'beverage':
+          marker([
+            {
+              title: '마카몽'
+              latlng: new kakao.maps.LatLng(37.501576,	127.051317)
+            },
+            {
+              title: '헤일리스커피'
+              latlng: new kakao.maps.LatLng(37.503489,	127.056133)
+            },
+            {
+              title: '그렌그로운'
+              latlng: new kakao.maps.LatLng(37.498906,	127.056666)
+            },
+            {
+              title: '커피데이'
+              latlng: new kakao.maps.LatLng(37.502515,	127.053816)
+            },
+            {
+              title: '이디야커피'
+              latlng: new kakao.maps.LatLng(37.503518,	127.050817)
+            },
+          ])
+          break;
+          case 'korean':
+            marker([
+              {
+                title: '명품유쾌'
+                latlng: new kakao.maps.LatLng(37.499578,	127.051614	)
+              },
+              {
+                title: '스테이'
+                latlng: new kakao.maps.LatLng(37.503485,	127.052277)
+              },
+              {
+                title: '에스'
+                latlng: new kakao.maps.LatLng(37.501844,	127.052162)
+              },
+              {
+                title: '라무진'
+                latlng: new kakao.maps.LatLng(37.501577,	127.052595)
+              },
+              {
+                title: '청담이상'
+                latlng: new kakao.maps.LatLng(37.504101,	127.052653)
+              },
+            ])
+            break;
+            case 'western_style':
+              marker([
+                {
+                  title: '쿠사파스타'
+                  latlng: new kakao.maps.LatLng(37.501596,	127.058397)
+                },
+                {
+                  title: '가츠오'
+                  latlng: new kakao.maps.LatLng(37.498989,	127.053442)
+                },
+                {
+                  title: '909버거앤파스타'
+                  latlng: new kakao.maps.LatLng(37.500967,	127.052874)
+                },
+                {
+                  title: '빌리앤오티스'
+                  latlng: new kakao.maps.LatLng(37.501474, 127.050934)
+                },
+                {
+                  title: '파파레스토랑'
+                  latlng: new kakao.maps.LatLng(37.504598,	127.057454)
+                },
+              ])
+              break;
+  }
+}
+
+</script>
+
+
+먹을 음식의 종류를 입력해주세요 (ex: 양식, 중식) <br>
+<input type="text"  />
+<input type="button" value="완료" />
+
 </body>
 </html>
