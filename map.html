@@ -89,105 +89,109 @@ function marker_info(txt) {
           title: '봉구스밥버거',
           latlng: new kakao.maps.LatLng(37.502486,	127.050254)
         }
-      ]
-      marker(info)
+      ];
+      marker(info);
       break;
-      // case 'japanese':
-      //   marker([
-      //     {
-      //       title: '이승재참치',
-      //       latlng: new kakao.maps.LatLng(37.502564,	127.052096)
-      //     },
-      //     {
-      //       title: '코미도리',
-      //       latlng: new kakao.maps.LatLng(37.500539,	127.042260)
-      //     },
-      //     {
-      //       title: '묵호항',
-      //       latlng: new kakao.maps.LatLng(37.496593,	127.044594)
-      //     },
-      //     {
-      //       title: '명동관전복세상',
-      //       latlng: new kakao.maps.LatLng(37.490694,	127.056125)
-      //     },
-      //     {
-      //       title: '강정희간장새우',
-      //       latlng: new kakao.maps.LatLng(37.502573,	127.052107)
-      //     }
-      //   ])
-      //   break;
-      //   case 'beverage':
-      //     marker([
-      //       {
-      //         title: '마카몽',
-      //         latlng: new kakao.maps.LatLng(37.501576,	127.051317)
-      //       },
-      //       {
-      //         title: '헤일리스커피',
-      //         latlng: new kakao.maps.LatLng(37.503489,	127.056133)
-      //       },
-      //       {
-      //         title: '그렌그로운',
-      //         latlng: new kakao.maps.LatLng(37.498906,	127.056666)
-      //       },
-      //       {
-      //         title: '커피데이',
-      //         latlng: new kakao.maps.LatLng(37.502515,	127.053816)
-      //       },
-      //       {
-      //         title: '이디야커피',
-      //         latlng: new kakao.maps.LatLng(37.503518,	127.050817)
-      //       }
-      //     ])
-      //     break;
-      //     case 'korean':
-      //       marker([
-      //         {
-      //           title: '명품유쾌',
-      //           latlng: new kakao.maps.LatLng(37.499578,	127.051614	)
-      //         },
-      //         {
-      //           title: '스테이',
-      //           latlng: new kakao.maps.LatLng(37.503485,	127.052277)
-      //         },
-      //         {
-      //           title: '에스',
-      //           latlng: new kakao.maps.LatLng(37.501844,	127.052162)
-      //         },
-      //         {
-      //           title: '라무진',
-      //           latlng: new kakao.maps.LatLng(37.501577,	127.052595)
-      //         },
-      //         {
-      //           title: '청담이상',
-      //           latlng: new kakao.maps.LatLng(37.504101,	127.052653)
-      //         }
-      //       ])
-      //       break;
-      //       case 'western_style':
-      //         marker([
-      //           {
-      //             title: '쿠사파스타',
-      //             latlng: new kakao.maps.LatLng(37.501596,	127.058397)
-      //           },
-      //           {
-      //             title: '가츠오',
-      //             latlng: new kakao.maps.LatLng(37.498989,	127.053442)
-      //           },
-      //           {
-      //             title: '909버거앤파스타',
-      //             latlng: new kakao.maps.LatLng(37.500967,	127.052874)
-      //           },
-      //           {
-      //             title: '빌리앤오티스',
-      //             latlng: new kakao.maps.LatLng(37.501474, 127.050934)
-      //           },
-      //           {
-      //             title: '파파레스토랑',
-      //             latlng: new kakao.maps.LatLng(37.504598,	127.057454)
-      //           }
-      //         ])
-      //         break;
+      case 'japanese':
+        var info = [
+          {
+            title: '이승재참치',
+            latlng: new kakao.maps.LatLng(37.502564,	127.052096)
+          },
+          {
+            title: '코미도리',
+            latlng: new kakao.maps.LatLng(37.500539,	127.042260)
+          },
+          {
+            title: '묵호항',
+            latlng: new kakao.maps.LatLng(37.496593,	127.044594)
+          },
+          {
+            title: '명동관전복세상',
+            latlng: new kakao.maps.LatLng(37.490694,	127.056125)
+          },
+          {
+            title: '강정희간장새우',
+            latlng: new kakao.maps.LatLng(37.502573,	127.052107)
+          }
+        ];
+        marker(info);
+        break;
+        case 'beverage':
+          var info = [
+            {
+              title: '마카몽',
+              latlng: new kakao.maps.LatLng(37.501576,	127.051317)
+            },
+            {
+              title: '헤일리스커피',
+              latlng: new kakao.maps.LatLng(37.503489,	127.056133)
+            },
+            {
+              title: '그렌그로운',
+              latlng: new kakao.maps.LatLng(37.498906,	127.056666)
+            },
+            {
+              title: '커피데이',
+              latlng: new kakao.maps.LatLng(37.502515,	127.053816)
+            },
+            {
+              title: '이디야커피',
+              latlng: new kakao.maps.LatLng(37.503518,	127.050817)
+            }
+          ];
+          marker(info);
+          break;
+          case 'korean':
+            var info = [
+              {
+                title: '명품유쾌',
+                latlng: new kakao.maps.LatLng(37.499578,	127.051614	)
+              },
+              {
+                title: '스테이',
+                latlng: new kakao.maps.LatLng(37.503485,	127.052277)
+              },
+              {
+                title: '에스',
+                latlng: new kakao.maps.LatLng(37.501844,	127.052162)
+              },
+              {
+                title: '라무진',
+                latlng: new kakao.maps.LatLng(37.501577,	127.052595)
+              },
+              {
+                title: '청담이상',
+                latlng: new kakao.maps.LatLng(37.504101,	127.052653)
+              }
+            ];
+            marker(info);
+            break;
+            case 'western_style':
+              var info = [
+                {
+                  title: '쿠사파스타',
+                  latlng: new kakao.maps.LatLng(37.501596,	127.058397)
+                },
+                {
+                  title: '가츠오',
+                  latlng: new kakao.maps.LatLng(37.498989,	127.053442)
+                },
+                {
+                  title: '909버거앤파스타',
+                  latlng: new kakao.maps.LatLng(37.500967,	127.052874)
+                },
+                {
+                  title: '빌리앤오티스',
+                  latlng: new kakao.maps.LatLng(37.501474, 127.050934)
+                },
+                {
+                  title: '파파레스토랑',
+                  latlng: new kakao.maps.LatLng(37.504598,	127.057454)
+                }
+              ];
+              marker(info)
+              break;
   }
 }
 
