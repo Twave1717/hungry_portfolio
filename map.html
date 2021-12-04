@@ -26,7 +26,6 @@
 <script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=7aa5121c6127b7a1a0f9158c5ee9183e"></script>
 <script>
 
-function map_marking(){
 var mapContainer = document.getElementById('map'), // 지도를 표시할 div
     mapOption = {
         center: new kakao.maps.LatLng(37.4956115411133, 127.05766654001489), // 지도의 중심좌표
@@ -42,7 +41,7 @@ var imageSrc = "https://t1.daumcdn.net/localimg/localimages/07/mapapidoc/markerS
 // 마커의 이미지정보를 가지고 있는 마커이미지를 생성합니다
 var markerImage = new kakao.maps.MarkerImage(imageSrc, imageSize),
     markerPosition = new kakao.maps.LatLng(37.4956115411133, 127.05766654001489); // 마커가 표시될 위치입니다
-  };
+
 
 // 마커를 생성합니다
 var marker = new kakao.maps.Marker({
@@ -1978,7 +1977,7 @@ document.addEventListener("click", function(e) {
 
 </script>
 
-<br onload='map_marking'>
+<br>
 
 <h3>음식점 이름을 입력해주세요 (유사한 음식점을 찾아드립니다) </h3>
 
