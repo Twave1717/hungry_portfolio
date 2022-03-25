@@ -1,0 +1,15 @@
+/* flex 모릅니다. 여기서 배우고 싶습니다. */ 
+
+.ranking{
+    display: flex;
+    flex-direction: flex-start;
+    align-items: stretch;
+  }
+.ranking > span{
+    color: black;
+    width: 200px;
+    margin: 10px;
+    text-align: center;
+    line-height: 75px;
+    font-size: 13px;
+}
