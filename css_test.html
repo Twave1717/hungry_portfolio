@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="UTF-8">
+    </head>
+    <style>
+        * {
+            font-size: 30px;
+        }
+
+        /* 자식 선택자 */
+
+        ol.child_selector li:first-child{
+            color: red;
+        }
+
+        ol.child_selector div:last-child{
+            color: blue;
+        }
+        
+        ol.child_selector li:nth-child(3){
+            color: green;
+        }
+        
+        ol.child_selector li:nth-child(2n):hover{
+            color: skyblue;
+        }
+
+        ol.child_selector div:nth-child(n+1):active{
+            color: whitesmoke;
+        } 
+
+        /* 하위 선택자 */
+
+        span.sub_selector span:nth-of-type(2n+1){
+            color: red;
+        } 
+
+        /* 형제 선택자 */
+
+        span.bro_selector p+div{
+            color: red;
+        }
+
+        span.bro_selector span~p{
+            color: blue;
+        }
+
+        /* 부정 선택자 & 가상 요소 선택자 */
+        span.negative_selector span:not(#not){
+            color: red;
+        }
+        
+        span.negative_selector span::after{
+            content: '.0'
+        }
+        
+        span.negative_selector div::before{
+            content: '&&&'
+        }
+
+        /* 속성 선택자 */
+
+        span.varliable_selector 
+
+
+    </style>
+    <body>
+
+        <ol class="child_selector">
+            <li> 1 </li>
+            <li> 2 </li>
+            <li> 3 </li>
+            <li> 4 </li>
+            <li> 5 </li>
+            <div> 6 </div>
+            <div> 7 </div>
+        </ol>
+
+        <hr>
+
+        <span class="sub_selector">
+            <span> 1 </span>
+            <span> 2 </span>
+            <span> 3 </span>
+            <span> 4 </span>
+            <span> 5 </span>
+            <div> 6 </div>
+            <div> 7 </div>
+        </span>
+
+        <hr>
+
+        <span class="bro_selector">
+            <span> 2 </span>
+            <p> 3 </p>
+            <p> 4 </p>
+            <p> 5 </p>
+            <div> 6 </div>
+            <div> 7 </div>
+        </span>
+
+        <hr>
+
+        <span class="negative_selector">
+            <span> 1 </span>
+            <span> 2 </span>
+            <span> 3 </span>
+            <span id="not"> 4 </span>
+            <span> 5 </span>
+            <div> 6 </div>
+            <div> 7 </div>
+        </span>
+
+        <hr>
+
+        <span class="variable_selector">
+            <span> 1 </span>
+            <span> 2 </span>
+            <span> 3 </span>
+            <span> 4 </span>
+            <span> 5 </span>
+            <div> 6 </div>
+            <div> 7 </div>
+        </span>
+    </body>
+
+</html>
