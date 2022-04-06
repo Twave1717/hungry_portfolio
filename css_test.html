@@ -61,8 +61,17 @@
 
         /* 속성 선택자 */
 
-        span.varliable_selector 
+        span.variable_selector span[class ^= "span-"]{
+            color: red;
+        }
 
+        span.variable_selector div[class = "div-1-1-1"]{
+            color: green;
+        }
+
+        span.variable_selector span[class $= "-1"]{
+            color: blue;
+        }
 
     </style>
     <body>
@@ -115,12 +124,12 @@
         <hr>
 
         <span class="variable_selector">
-            <span> 1 </span>
-            <span> 2 </span>
-            <span> 3 </span>
-            <span> 4 </span>
-            <span> 5 </span>
-            <div> 6 </div>
+            <span class="span-1-1-1"> 1 </span>
+            <span class="span-1-3-5"> 2 </span>
+            <span class="span-1-1-3"> 3 </span>
+            <span class="span-1-1-4"> 4 </span>
+            <span class="span-1-1-2"> 5 </span>
+            <div class="div-1-1-1"> 6 </div>
             <div> 7 </div>
         </span>
     </body>
