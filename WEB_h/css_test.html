@@ -73,8 +73,45 @@
             color: blue;
         }
 
+        #box1{
+            background-color: aqua;
+
+            margin: 100px 100px;
+            padding: 100px;
+            box-sizing: border-box;
+        }
+        #box2{
+            background-color: brown;
+
+            margin: 100px 100px;
+            padding: 100px;
+            box-sizing: border-box;
+        }
+
+
+        .box_group{
+            width:5000px;
+        }
+        .box{
+            width:200px;
+            height: 100px;
+            background: red;
+            margin: 20px;
+            float: left;
+            border: 6px solid blue;
+        }
     </style>
     <body>
+
+
+        <div id="box1">box</div>
+        <div id="box2">box</div>
+
+        <div class="box_group">
+            <div class="box"></div>
+            <div class="box"></div>
+        </div>
+
 
         <ol class="child_selector">
             <li> 1 </li>

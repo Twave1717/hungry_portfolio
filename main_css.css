@@ -6,15 +6,18 @@ a:hover{ color: blue;}
 header h1{
     font-size: 70px;
 }
-header div{
+#my_name{
     font-size: 40px;
     text-align: right;
 }
 
+.navi_wrapper{
+    border-top-style: solid;
+    border-bottom-style: solid;
+}
 .navi{
-    padding-right: 10%;
-    padding-top: 10px;
-    padding-bottom: 10px;
+    padding-left: 10px;
+    padding-right: 10px;
 }
 
 #time_table{
