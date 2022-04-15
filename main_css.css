@@ -1,24 +1,31 @@
+@import url('https://fonts.googleapis.com/css2?family=Gothic+A1&display=swap');
+
+*{ font-family: "Gothic A1", sans-serif; }
 
 a:link { color: black; text-decoration:none;}
 a:visited { color: black; text-decoration:none;}
 a:hover{ color: blue;}
 
+body{
+    margin: 0;
+}
+
+
 header h1{
-    font-size: 70px;
+    font-size: 64px;
+    text-align: center;
+    background-color: beige;
 }
-#my_name{
-    font-size: 40px;
-    text-align: right;
-}
+
 
 .navi_wrapper{
     border-top-style: solid;
     border-bottom-style: solid;
 }
-.navi{
-    padding-left: 10px;
-    padding-right: 10px;
+div[class="navi"]::after{
+    content: "|"
 }
+
 
 #time_table{
     font-size: 20px;
