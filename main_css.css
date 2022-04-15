@@ -1,6 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Gothic+A1&display=swap');
 
-*{ font-family: "Gothic A1", sans-serif; }
+* { font-family: "Gothic A1", sans-serif; }
 
 a:link { color: black; text-decoration:none;}
 a:visited { color: black; text-decoration:none;}
@@ -11,7 +11,7 @@ body{
 }
 
 
-header h1{
+header > h1{
     font-size: 64px;
     text-align: center;
     background-color: beige;
