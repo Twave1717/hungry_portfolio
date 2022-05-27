@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>0527_1</title>
+    <style>
+        .container{
+            width: 500px;
+            height: 180px;
+            background: cadetblue;
+            margin-bottom: 10px;
+            display: flex;
+        }
+        .item{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 40px;
+            color: white;
+            height: 150px;
+        }
+        div{
+            animation: a 4s infinite;
+        }
+        @keyframes a{
+            50%{
+                flex: 1;
+            }
+        }
+        .item:nth-child(1) {background: violet; flex: 1 0;}
+        .item:nth-child(2) {background: tomato;  flex: 2 0;}
+        .item:nth-child(3) {background: greenyellow; flex: 1 0;}
+        .item:nth-child(4) {background: skyblue; flex: 10 0;}
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="item">0</div>
+        <div class="item">1</div>
+        <div class="item">2</div>
+        <div class="item">3</div>
+    </div>
+</body>
+</html>
