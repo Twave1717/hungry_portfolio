@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>0520_2</title>
+    <style>
+        .box{
+            width: 100px;
+            height: 100px;
+            background: tomato;
+            border-radius: 10px;
+            animation: move 5s infinite reverse;
+        }
+        .box2{
+            width: 100px;
+            height: 100px;
+            background: tomato;
+            border-radius: 10px;
+            animation: move 5s infinite;
+        }
+
+    @keyframes move{
+        0%{
+            transform: translate(0, 0);
+        }
+        20%{
+            transform: translate(500px, 415px);
+        }
+        40%{
+            transform: translate(0, 415px);
+        }
+        60%{
+            transform: translate(500px, 0);
+        }
+        80%{
+            transform: translate(250px, 500px);
+        }
+        100%{
+            transform: translate(0, 0);
+        }
+    }
+    </style>
+</head>
+<body>
+    <h1>Guess What</h1>
+    <div class="box"></div>
+    <div class="box2"></div>
+</body>
+</html>

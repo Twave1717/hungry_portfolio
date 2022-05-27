@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        div.float-right {
+            float: right;
+        }
+
+        div.float-left {
+            float: left;
+        }
+
+        div.next {
+            clear: both;
+        }
+
+        .parent{
+            overflow: hidden;
+        }
+        .child{
+            float: right;
+        }
+        .parent-clearfix::after{
+            content:"";
+            clear:both;
+            display:block;
+        }
+
+        a span {
+            width: 100px;
+            height: 100px;
+            background: red;
+            float: left;
+        }
+        
+        /* box의 float 기준 = 자기 자신*/
+        .box{
+            position: relative;
+            top:50px;
+            right:100px;
+            float: left;
+        }
+        .box-baby{
+            position: absolute;
+            top:50px;
+            right:100px;
+            float: left;
+        }
+
+        .box1{
+            background: green url("portfolio\샤.webp") no-repeat left top scroll;
+        }
+        .box2{
+            background: url("portfolio\샤.webp") no-repeat right 100px;
+        }
+        .box3{
+            background: green;
+        }
+
+        .box_a{
+            width: 500px;
+            height: 500px;
+            padding: 50px;
+            border: 30px dashed rgba(255,0,0,.3);
+            background: orange url("https://post-phinf.pstatic.net/MjAyMDAyMjlfMjY4/MDAxNTgyOTU0Nzg3MjQ4.PBMFV4WrSJmeSUJ56c4C7Vkz_SsQlJ1SByKU18kkJh0g.T7mQnadCWVtEZ448AGk_9kG1HFBAzdztXZcBjvSbduwg.JPEG/%EA%B3%A0%EC%96%91%EC%9D%B4_%EB%82%98%EC%9D%B41.jpg?type=w1200") no-repeat;
+            background-origin: border-box;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="box_a"></div>
+
+    <div class="box1">hhh</div>
+
+    <div class="box"></div>
+        <div class="box-baby">This is the baby boxdd</div>
+        <div class="box-baby">This is the baby box</div>
+        <div class="box-baby">This is the baby box</div>
+
+    <a href="#"><span>aaaaaaaaa</span></a>
+    <a href="#"><span>aaaaaaaaa</span></a>
+    <span></span>
+
+    <!-- parent 안에서만 float 유지됨. clearfix방식. 중요-->
+    <div class="parent-clearfix">
+        <div class="child">???</div>
+        <div class="child">???</div>
+    </div>
+
+    <!-- overflow방식 -->
+    <div class="parent">
+        <div class="child">111!</div>
+        <div class="child">111!</div>
+    </div>
+
+    <div class="float-right">3</div>
+    <div class="float-right">3</div>
+    <div class="float-left">1</div>
+    <div class="float-left">1</div>
+    <div class="float-right">3</div>
+    <div class="float-right">3</div>
+    <div class="float-left">1</div>
+    <div class="float-left">1</div>
+    <div class="next">2</div>
+    <div class="float-left">1</div>
+    <div class="float-left">1</div>
+    <div class="float-left">1</div>
+    <div class="float-left">1</div>
+    <div class="float-right">3</div>
+    <div class="float-right">3</div>
+    <div class="float-right">3</div>
+    <div class="float-right">3</div>
+    <div class="float-right">3</div>
+    <div class="float-left">1</div>
+    <div class="float-left">1</div>
+    <div class="float-left">1</div>
+    <div class="next">2</div>
+    <div class="float-left">1</div>
+    <div class="float-right">3</div>
+    <div class="float-right">3</div>
+    <div class="float-right">3</div>
+    <div class="float-left">1</div>
+    <div class="float-left">1</div>
+    <div class="float-left">1</div>
+    <div class="next">2</div>
+</body>
+
+</html>

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        /*얘가 float 기준*/
+        .grand-box {
+            position: relative;
+        }
+
+        /*얘는 pass*/
+        .parent-box {}
+
+        /*absolute 정렬 기준 찾으로 parent 올라감*/
+        .child-box {
+            position: absolute;
+            top: 50px;
+            right: 100px;
+            float: left;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="grand-box">
+        <div class="parent-box">
+            <div class="child-box">123</div>
+        </div>
+    </div>
+</body>
+
+</html>

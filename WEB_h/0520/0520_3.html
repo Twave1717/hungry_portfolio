@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>0520_3</title>
+    <style>
+        .box{
+            width: 150px;
+            height: 100px;
+            border-radius: 10px;
+            margin: 10px;
+            font-size: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            background: yellow;
+            animation: size-up 3s linear infinite alternate;
+        }
+        .box::before{
+            content: 'running';
+            font-size: 20px;
+            color:tomato;
+            font-weight:70px;
+        }
+        .box:hover{
+            background: dodgerblue;
+            animation-play-state: paused;
+        }
+        .box:hover::before{
+            content: 'paused';
+        }
+
+        @keyframes size-up{
+            os{
+                width: 150px;
+                height: 100px;
+            }
+            33%{
+                width: 700px;
+                height: 100px;
+            }
+            100%{
+                width: 150px;
+                height: 100px;
+            }
+        }
+    </style>
+
+</head>
+<body>
+    <div class="box"></div>
+</body>
+</html>
