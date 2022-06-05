@@ -14,25 +14,93 @@ body{
 header > h1{
     font-size: 64px;
     text-align: center;
-    background-color: beige;
+    background-color: rgb(220,218,178);
+    padding: 30px 0;
+    margin: 0;
+}
+
+nav .navi_wrapper{
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    flex-basis: 10px;
+    background-color: rgb(220,218,178);
+    margin: 0 0 10px 0;
+    padding: 10px 0;
+    border-top: 1px solid rgb(102,102,102);
+    border-bottom: 1px solid rgb(102,102,102);
+}
+div.navi{
+    display: inline;
+    padding: 0 10px;
+}
+
+.who{
+    margin-top: 100px;
+}
+
+.who h1{
+    margin-left: 10px;
+}
+
+.who blockquote{
+    border: 1px solid rgb(220,218,178);
+    border-left: 10px solid rgb(220,218,178);
+    margin-left: 0px;
+    margin-right: 0px;
+    padding: 10px 20px;
+    line-height: 150%;
+    text-align: center;
+    font-size: larger;
+    color: rgb(102,102,102);
 }
 
 
-.navi_wrapper{
-    border-top-style: solid;
-    border-bottom-style: solid;
-}
-div[class="navi"]::after{
-    content: "|"
+.ability{
+    margin-top: 50px;
+    margin-left: 10px;
 }
 
+.ability_.wrapper{
+    height: 400px;
+    display: grid;
+    grid-template-rows: repeat(2, 100px);
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+    place-content: center space-evenly;
+}
+
+[class ^= ability_]{
+    display: inline-block;
+    margin: 100px;
+}
+
+#web{
+    width: 50px;
+}
+
+.project{
+    display: grid;
+    margin-top: 50px;
+    margin-left: 10px;
+}
+
+[class ^= project_]{
+    display: flex;
+    margin: 20px;
+}
+
+.hungry_map_img{
+    width: 50%;
+}
 
 #time_table{
     font-size: 20px;
     width: 100%;
 }
 #footer_info{
-    color: gray;
+    color: rgb(102,102,102);
     font-size: 13px;
     font-weight: lighter;
+    margin-left: 10px;
 }
